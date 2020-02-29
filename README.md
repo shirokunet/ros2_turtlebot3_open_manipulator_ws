@@ -4,6 +4,7 @@ ROS2 Workspace for TurtleBot3 Burger with OpenMANIPULATOR-X.
 ## Install
 ```
 $ git clone https://github.com/shirokunet/ros2_turtlebot3_open_manipulator_ws
+$ colcon build
 ```
 
 ## Demo
