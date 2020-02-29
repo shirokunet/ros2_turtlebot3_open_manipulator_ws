@@ -1,14 +1,17 @@
 # ros2_turtlebot3_open_manipulator_ws
 ROS2 Workspace for TurtleBot3 Burger with OpenMANIPULATOR-X.
 
-## Install
+## Getting Started
+### Prerequisites
+- ROS2 dashing
+
+### Install
 ```
 $ git clone https://github.com/shirokunet/ros2_turtlebot3_open_manipulator_ws
 $ colcon build
 ```
 
-## Demo
-### Run fake node
+### Run TurtleBot3 fake node
 ```
 $ source set_path.sh
 $ ros2 launch turtlebot3_fake_node turtlebot3_fake_node.launch.py
