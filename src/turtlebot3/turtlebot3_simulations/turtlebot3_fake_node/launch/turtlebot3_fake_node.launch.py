@@ -73,4 +73,12 @@ def generate_launch_description():
             output='screen',
             parameters=[{'use_sim_time': use_sim_time}],
             arguments=[urdf]),
+
+        # Node(
+        #     package='joint_state_publisher',
+        #     node_executable='joint_state_publisher',
+        #     node_name='joint_state_publisher',
+        #     output='screen',
+        #     parameters=[{'use_gui': "true", 'use_sim_time': use_sim_time}],
+        #     arguments=[urdf]),
     ])

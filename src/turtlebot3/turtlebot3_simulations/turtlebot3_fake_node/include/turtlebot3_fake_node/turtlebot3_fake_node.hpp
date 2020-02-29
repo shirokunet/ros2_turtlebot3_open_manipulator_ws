@@ -71,6 +71,8 @@ class Turtlebot3Fake : public rclcpp::Node
   double wheel_seperation_;
   double wheel_radius_;
 
+  double counter_;
+
   // Function prototypes
   void init_parameters();
   void init_variables();

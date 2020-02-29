@@ -112,9 +112,16 @@ void Turtlebot3Fake::init_variables()
 
   joint_states_.name.push_back("wheel_left_joint");
   joint_states_.name.push_back("wheel_right_joint");
-  joint_states_.position.resize(2, 0.0);
-  joint_states_.velocity.resize(2, 0.0);
-  joint_states_.effort.resize(2, 0.0);
+  joint_states_.name.push_back("joint1");
+  joint_states_.name.push_back("joint2");
+  joint_states_.name.push_back("joint3");
+  joint_states_.name.push_back("joint4");
+  joint_states_.name.push_back("gripper");
+  joint_states_.name.push_back("gripper_sub");
+  joint_states_.name.push_back("end_effector_joint");
+  joint_states_.position.resize(9, 0.0);
+  joint_states_.velocity.resize(9, 0.0);
+  joint_states_.effort.resize(9, 0.0);
 
   prev_update_time_ = this->now();
   last_cmd_vel_time_ = this->now();
@@ -242,6 +249,12 @@ void Turtlebot3Fake::update_joint_state()
   joint_states_.position[RIGHT] = last_position_[RIGHT];
   joint_states_.velocity[LEFT] = last_velocity_[LEFT];
   joint_states_.velocity[RIGHT] = last_velocity_[RIGHT];
+
+  counter_ += 0.01;
+  for (int i = 2; i < 6; ++i) {
+    joint_states_.position[i] = std::sin(counter_);
+  }
+  RCLCPP_INFO(this->get_logger(), "update_joint_state '%f'", std::sin(counter_));
 }
 
 void Turtlebot3Fake::update_tf(geometry_msgs::msg::TransformStamped & odom_tf)
